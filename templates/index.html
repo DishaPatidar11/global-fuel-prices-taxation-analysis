@@ -8,7 +8,7 @@
     <title>Global Fuel Prices and Taxation Trends | Disha Patidar</title>
 
     <meta name="description"
-          content="Explore global fuel prices, taxation policies, subsidies, and economic trends through an interactive Tableau Story by Disha Patidar.">
+          content="Explore global fuel prices, taxation policies, subsidies, and economic trends through interactive Tableau visualizations by Disha Patidar.">
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='styles.css') }}">
@@ -24,6 +24,7 @@
     <!-- NAVIGATION -->
     <header class="site-header">
         <nav class="navbar container">
+
             <a href="#home" class="brand">
                 <span class="brand-icon">🌍</span>
                 <span>Global Fuel Intelligence</span>
@@ -32,10 +33,11 @@
             <div class="nav-links">
                 <a href="#home">Home</a>
                 <a href="#overview">Overview</a>
-                <a href="#explore">Explore Story</a>
+                <a href="#explore">Explore Workbook</a>
                 <a href="#scenarios">Scenarios</a>
                 <a href="#about">About</a>
             </div>
+
         </nav>
     </header>
 
@@ -44,34 +46,42 @@
 
         <!-- HERO / HOMEPAGE -->
         <section class="hero" id="home">
+
             <div class="hero-content container">
 
-                <p class="eyebrow">GLOBAL DATA • ANALYTICS • INSIGHTS</p>
+                <p class="eyebrow">
+                    GLOBAL DATA • ANALYTICS • INSIGHTS
+                </p>
 
                 <h1>
                     Global Fuel Prices and Taxation Trends:
-                    <span>A Comprehensive Global Performance Intelligence Report</span>
+                    <span>
+                        A Comprehensive Global Performance Intelligence Report
+                    </span>
                 </h1>
 
                 <p class="hero-description">
                     Discover how fuel prices, taxation policies, and government
-                    subsidies differ across countries. Explore interactive data
+                    subsidies differ across countries. Explore interactive
                     visualizations to understand global patterns and their
-                    implications for supply chains, public policy, and economic
-                    development.
+                    implications for supply chains, public policy, and
+                    economic development.
                 </p>
 
                 <div class="hero-buttons">
+
                     <a href="#explore" class="button button-primary">
-                        Explore Tableau Story →
+                        Explore Tableau Workbook →
                     </a>
 
                     <a href="#overview" class="button button-secondary">
                         About the Project
                     </a>
+
                 </div>
 
                 <div class="hero-highlights">
+
                     <div class="highlight">
                         <strong>2020–2026</strong>
                         <span>Study Period</span>
@@ -86,6 +96,7 @@
                         <strong>Interactive</strong>
                         <span>Tableau Visualizations</span>
                     </div>
+
                 </div>
 
             </div>
@@ -96,31 +107,39 @@
         <section class="section container" id="overview">
 
             <div class="section-heading">
+
                 <p class="eyebrow">PROJECT OVERVIEW</p>
+
                 <h2>Understanding the Global Fuel Landscape</h2>
+
                 <p>
                     Fuel prices are influenced by taxation, government policy,
                     subsidies, market conditions, and economic differences.
                     Analyzing these factors helps reveal how countries approach
                     fuel affordability and energy policy.
                 </p>
+
             </div>
 
             <div class="overview-grid">
 
                 <article class="info-card">
                     <div class="card-icon">⛽</div>
+
                     <h3>Fuel Price Analysis</h3>
+
                     <p>
                         Compare fuel prices across countries and investigate
-                        differences in petrol, diesel, LPG, and other available
-                        fuel categories in the dataset.
+                        differences among petrol, diesel, LPG, and other
+                        available fuel categories.
                     </p>
                 </article>
 
                 <article class="info-card">
                     <div class="card-icon">🏛️</div>
+
                     <h3>Taxation & Subsidies</h3>
+
                     <p>
                         Explore how fuel taxes and government subsidies
                         contribute to differences in consumer fuel costs
@@ -130,7 +149,9 @@
 
                 <article class="info-card">
                     <div class="card-icon">📊</div>
+
                     <h3>Data-Driven Insights</h3>
+
                     <p>
                         Use interactive charts and comparisons to identify
                         patterns that can support policy analysis, planning,
@@ -142,59 +163,75 @@
         </section>
 
 
-        <!-- TABLEAU STORY -->
+        <!-- COMPLETE TABLEAU WORKBOOK -->
         <section class="section tableau-section" id="explore">
 
             <div class="container">
 
                 <div class="section-heading">
-                    <p class="eyebrow">INTERACTIVE DATA EXPLORATION</p>
-                    <h2>Explore the Tableau Story</h2>
-                    <p>
-                        Navigate the Story points and visualizations to explore
-                        global fuel prices, taxation patterns, and their
-                        potential economic implications.
+
+                    <p class="eyebrow">
+                        INTERACTIVE DATA EXPLORATION
                     </p>
+
+                    <h2>Explore the Tableau Workbook</h2>
+
+                    <p>
+                        Explore the published Tableau visualization below.
+                        Use the available workbook tabs to navigate between
+                        published views, dashboards, and the Story when
+                        those views are included and accessible.
+                    </p>
+
                 </div>
+
 
                 <div class="tableau-container">
 
                     <!--
-                    IMPORTANT:
-                    This URL assumes that the published Tableau Story is
-                    available under the view name STORY.
+                    EMBEDDED TABLEAU VIEW
 
-                    If Tableau displays an error, replace the src with the
-                    published Story URL obtained through Tableau Public:
-                    Open Story → Share → Copy Link.
+                    This uses the known Top10LPGCountries worksheet URL.
+                    Tabs are not explicitly hidden.
+
+                    Whether other dashboards and the Story appear as tabs
+                    depends on the views included and published in Tableau.
                     -->
 
                     <tableau-viz
                         id="globalFuelWorkbook"
-                        src="https://public.tableau.com/views/GlobalFuelPricesandTaxationAnalysis2020-2026/STORY?:showVizHome=no"
+                        src="https://public.tableau.com/views/GlobalFuelPricesandTaxationAnalysis2020-2026/Top10LPGCountries?:showVizHome=no"
                         toolbar="bottom"
-                        hide-tabs
                         device="desktop"
                         width="100%"
                         height="900">
+
                     </tableau-viz>
 
                 </div>
 
+
                 <p class="tableau-note">
-                    <strong>Tip:</strong> Use the navigation within the Tableau
-                    Story to move between its story points. You can also use
-                    Tableau's toolbar to interact with the visualizations.
+                    <strong>How to explore:</strong>
+                    Use the available Tableau tabs to switch between views.
+                    Interact with charts and filters to explore the data.
+                    If a dashboard or Story is missing, verify that it has
+                    been included in the published Tableau workbook.
                 </p>
 
+
                 <div class="external-link">
+
                     <a
                         href="https://public.tableau.com/app/profile/disha.patidar7671/viz/GlobalFuelPricesandTaxationAnalysis2020-2026/Top10LPGCountries"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="button button-primary">
-                        Open on Tableau Public ↗
+
+                        Open Published Workbook on Tableau Public ↗
+
                     </a>
+
                 </div>
 
             </div>
@@ -205,65 +242,98 @@
         <section class="section container" id="scenarios">
 
             <div class="section-heading">
+
                 <p class="eyebrow">KEY ANALYTICAL AREAS</p>
+
                 <h2>Three Perspectives on Global Fuel Data</h2>
+
                 <p>
                     The project examines fuel data through three practical
-                    perspectives to connect the visual analysis with
+                    perspectives, connecting the visual analysis with
                     real-world decisions.
                 </p>
+
             </div>
+
 
             <div class="scenario-grid">
 
                 <article class="scenario-card">
+
                     <span class="scenario-number">01</span>
+
                     <h3>Fuel Taxation & Subsidy Policy</h3>
+
                     <p>
                         Examine variations in fuel taxation and subsidies
                         to understand how government policies influence
                         fuel affordability.
                     </p>
-                    <a href="#explore">Explore the Story →</a>
+
+                    <a href="#explore">
+                        Explore the Workbook →
+                    </a>
+
                 </article>
 
+
                 <article class="scenario-card">
+
                     <span class="scenario-number">02</span>
+
                     <h3>Global Fuel Prices & Supply Chain Planning</h3>
+
                     <p>
                         Compare fuel prices across markets to identify
-                        differences that may be relevant to logistics,
-                        transportation, and supply chain planning.
+                        differences relevant to logistics, transportation,
+                        and supply chain planning.
                     </p>
-                    <a href="#explore">Explore the Story →</a>
+
+                    <a href="#explore">
+                        Explore the Workbook →
+                    </a>
+
                 </article>
 
+
                 <article class="scenario-card">
+
                     <span class="scenario-number">03</span>
+
                     <h3>Fuel Prices, Taxation & Economic Development</h3>
+
                     <p>
                         Investigate relationships between fuel prices,
                         taxation, and economic indicators to support
                         broader comparative analysis.
                     </p>
-                    <a href="#explore">Explore the Story →</a>
+
+                    <a href="#explore">
+                        Explore the Workbook →
+                    </a>
+
                 </article>
 
             </div>
         </section>
 
 
-        <!-- ABOUT -->
+        <!-- ABOUT THE PROJECT -->
         <section class="section about-section" id="about">
 
             <div class="container about-content">
 
                 <div>
+
                     <p class="eyebrow">ABOUT THIS PROJECT</p>
+
                     <h2>Turning Data into Meaningful Insights</h2>
+
                 </div>
 
+
                 <div>
+
                     <p>
                         This project uses Tableau to explore global fuel
                         prices and taxation trends over the 2020–2026
@@ -273,25 +343,32 @@
                     </p>
 
                     <p>
-                        <strong>Project creator:</strong> Disha Patidar
+                        <strong>Project Creator:</strong>
+                        Disha Patidar
                     </p>
 
                     <p>
-                        <strong>Visualization tool:</strong> Tableau Public
+                        <strong>Visualization Tool:</strong>
+                        Tableau Public
                     </p>
 
                     <p>
-                        <strong>Focus:</strong> Global fuel prices,
-                        taxation, subsidies, and comparative analysis.
+                        <strong>Focus:</strong>
+                        Global fuel prices, taxation, subsidies,
+                        and comparative analysis.
                     </p>
+
 
                     <a
                         href="https://github.com/DishaPatidar11/global-fuel-prices-taxation-analysis"
                         target="_blank"
                         rel="noopener noreferrer"
                         class="button button-secondary">
+
                         View Project on GitHub ↗
+
                     </a>
+
                 </div>
 
             </div>
@@ -302,6 +379,7 @@
 
     <!-- FOOTER -->
     <footer class="site-footer">
+
         <div class="container footer-content">
 
             <div>
@@ -314,16 +392,16 @@
             </div>
 
             <p class="copyright">
-                © 2026 Disha Patidar. Created for educational and analytical
-                purposes.
+                © 2026 Disha Patidar. Created for educational
+                and analytical purposes.
             </p>
 
         </div>
+
     </footer>
 
 
-    <!-- Keep the homepage at the top when opening the root URL.
-         Preserve normal navigation when a section hash is present. -->
+    <!-- START AT THE HOMEPAGE WHEN THE ROOT URL IS OPENED -->
     <script>
         if (!window.location.hash) {
             if ("scrollRestoration" in history) {
