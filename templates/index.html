@@ -2,465 +2,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Explore global fuel prices, taxation, subsidies, and economic patterns through an interactive Tableau workbook.">
+    <title>Global Fuel Prices and Taxation Trends | Disha Patidar</title>
 
-  <title>Global Fuel Prices and Taxation Trends | Disha Patidar</title>
+    <meta name="description"
+          content="Explore global fuel prices, taxation policies, subsidies, and economic trends through an interactive Tableau Story by Disha Patidar.">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='styles.css') }}">
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
-
-  <script
-    type="module"
-    src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js">
-  </script>
+    <script
+        type="module"
+        src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js">
+    </script>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="site-header">
-    <a class="brand" href="#home" aria-label="Global Fuel Analytics home">
-      <span class="brand-mark">GF</span>
-      <span>Global Fuel <b>Analytics</b></span>
-    </a>
+    <!-- NAVIGATION -->
+    <header class="site-header">
+        <nav class="navbar container">
+            <a href="#home" class="brand">
+                <span class="brand-icon">🌍</span>
+                <span>Global Fuel Intelligence</span>
+            </a>
 
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="#overview">Overview</a>
-      <a href="#explore">Explore Workbook</a>
-      <a href="#scenarios">Scenarios</a>
-      <a href="#about">About</a>
-    </nav>
-
-    <a class="header-cta" href="#explore">
-      Explore dashboards <span aria-hidden="true">↗</span>
-    </a>
-  </header>
-
-  <main>
-
-    <!-- HERO -->
-    <section class="hero" id="home">
-
-      <div class="hero-glow glow-one"></div>
-      <div class="hero-glow glow-two"></div>
-
-      <div class="hero-content">
-
-        <div class="eyebrow">
-          <span class="eyebrow-dot"></span>
-          GLOBAL ENERGY • DATA STORYTELLING
-        </div>
-
-        <h1>
-          Global Fuel Prices<br>
-          and <span>Taxation Trends</span>
-        </h1>
-
-        <p class="hero-subtitle">
-          A Comprehensive Global Performance Intelligence Report
-        </p>
-
-        <p class="hero-copy">
-          Explore the global fuel-price landscape and discover how prices,
-          taxation, subsidies, and economic conditions differ across countries.
-        </p>
-
-        <div class="hero-actions">
-          <a class="button button-primary" href="#explore">
-            Explore the workbook <span aria-hidden="true">↓</span>
-          </a>
-
-          <a
-            class="button button-secondary"
-            href="https://public.tableau.com/app/profile/disha.patidar7671/viz/GlobalFuelPricesandTaxationAnalysis2020-2026/Top10LPGCountries"
-            target="_blank"
-            rel="noopener noreferrer">
-            Open on Tableau Public <span aria-hidden="true">↗</span>
-          </a>
-        </div>
-
-        <div class="hero-meta">
-          <span class="meta-icon">◷</span>
-          Analysis period: 2020–2026
-          <span class="meta-divider">|</span>
-          <span>Project by Disha Patidar</span>
-        </div>
-
-      </div>
-
-      <div class="hero-visual" aria-label="Global fuel analytics illustration">
-
-        <div class="orbit orbit-outer"></div>
-        <div class="orbit orbit-inner"></div>
-
-        <div class="visual-core">
-          <span class="flame">♨</span>
-          <strong>FUEL</strong>
-          <small>GLOBAL INSIGHTS</small>
-        </div>
-
-        <div class="float-card card-price">
-          <span class="mini-label">GLOBAL TRENDS</span>
-          <strong>2020—2026</strong>
-          <span class="mini-line">
-            <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
-          </span>
-        </div>
-
-        <div class="float-card card-data">
-          <span class="data-icon">↗</span>
-          <div>
-            <strong>Data-led</strong>
-            <small>decision support</small>
-          </div>
-        </div>
-
-        <div class="visual-tag tag-one">PRICE</div>
-        <div class="visual-tag tag-two">TAX</div>
-        <div class="visual-tag tag-three">SUPPLY</div>
-
-      </div>
-    </section>
-
-    <!-- PROJECT METRICS -->
-    <section class="metrics-strip" aria-label="Project focus areas">
-
-      <div class="metric">
-        <span class="metric-icon">◉</span>
-        <div>
-          <strong>Global perspective</strong>
-          <small>Compare countries and regions</small>
-        </div>
-      </div>
-
-      <div class="metric">
-        <span class="metric-icon">⌁</span>
-        <div>
-          <strong>Interactive analysis</strong>
-          <small>Explore charts and filters</small>
-        </div>
-      </div>
-
-      <div class="metric">
-        <span class="metric-icon">▤</span>
-        <div>
-          <strong>2020–2026</strong>
-          <small>Fuel-price and taxation trends</small>
-        </div>
-      </div>
-
-    </section>
-
-    <!-- OVERVIEW -->
-    <section class="section overview-section" id="overview">
-
-      <div class="section-heading">
-
-        <div>
-          <div class="section-kicker">01 / PROJECT OVERVIEW</div>
-          <h2>Understand the story<br>behind fuel prices.</h2>
-        </div>
-
-        <p>
-          Fuel prices are shaped by more than the cost of crude oil.
-          Taxes, subsidies, regional conditions, and economic factors
-          all influence what consumers pay. This project brings these
-          dimensions together in an interactive visual report.
-        </p>
-
-      </div>
-
-      <div class="overview-grid">
-
-        <article class="overview-card overview-main">
-          <div class="card-symbol">◎</div>
-          <h3>What this project explores</h3>
-          <p>
-            A comparative view of fuel-price patterns and taxation across
-            countries, using Tableau dashboards to make complex information
-            easier to examine.
-          </p>
-          <div class="chip-row">
-            <span>Fuel prices</span>
-            <span>Taxation</span>
-            <span>Subsidies</span>
-          </div>
-        </article>
-
-        <article class="overview-card">
-          <div class="card-symbol purple">⌕</div>
-          <h3>Compare</h3>
-          <p>
-            Review differences across countries, regions, and income groups.
-          </p>
-        </article>
-
-        <article class="overview-card">
-          <div class="card-symbol green">↗</div>
-          <h3>Discover</h3>
-          <p>
-            Identify patterns that can support policy and planning discussions.
-          </p>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- COMPLETE TABLEAU WORKBOOK -->
-    <section class="section workbook-section" id="explore">
-
-      <div class="section-heading workbook-heading">
-
-        <div>
-          <div class="section-kicker">02 / INTERACTIVE TABLEAU WORKBOOK</div>
-          <h2>Explore the complete<br><span>data story.</span></h2>
-        </div>
-
-        <p>
-          Interact with the published Tableau visualization below.
-          Use Tableau's workbook tabs, when available, to navigate between
-          published sheets, dashboards, and the Story. You can also open
-          the workbook directly on Tableau Public.
-        </p>
-
-      </div>
-
-      <div class="viz-shell">
-
-        <div class="viz-topbar">
-
-          <div class="viz-title">
-            <span class="live-dot"></span>
-            <div>
-              <strong>Global Fuel Prices &amp; Taxation Analysis</strong>
-              <small>Interactive Tableau workbook</small>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#overview">Overview</a>
+                <a href="#explore">Explore Story</a>
+                <a href="#scenarios">Scenarios</a>
+                <a href="#about">About</a>
             </div>
-          </div>
+        </nav>
+    </header>
 
-          <a
-            href="https://public.tableau.com/app/profile/disha.patidar7671/viz/GlobalFuelPricesandTaxationAnalysis2020-2026/Top10LPGCountries"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="viz-open">
-            Open on Tableau Public ↗
-          </a>
+
+    <main>
+
+        <!-- HERO / HOMEPAGE -->
+        <section class="hero" id="home">
+            <div class="hero-content container">
+
+                <p class="eyebrow">GLOBAL DATA • ANALYTICS • INSIGHTS</p>
+
+                <h1>
+                    Global Fuel Prices and Taxation Trends:
+                    <span>A Comprehensive Global Performance Intelligence Report</span>
+                </h1>
+
+                <p class="hero-description">
+                    Discover how fuel prices, taxation policies, and government
+                    subsidies differ across countries. Explore interactive data
+                    visualizations to understand global patterns and their
+                    implications for supply chains, public policy, and economic
+                    development.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#explore" class="button button-primary">
+                        Explore Tableau Story →
+                    </a>
+
+                    <a href="#overview" class="button button-secondary">
+                        About the Project
+                    </a>
+                </div>
+
+                <div class="hero-highlights">
+                    <div class="highlight">
+                        <strong>2020–2026</strong>
+                        <span>Study Period</span>
+                    </div>
+
+                    <div class="highlight">
+                        <strong>Global</strong>
+                        <span>Country-Level Analysis</span>
+                    </div>
+
+                    <div class="highlight">
+                        <strong>Interactive</strong>
+                        <span>Tableau Visualizations</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- PROJECT OVERVIEW -->
+        <section class="section container" id="overview">
+
+            <div class="section-heading">
+                <p class="eyebrow">PROJECT OVERVIEW</p>
+                <h2>Understanding the Global Fuel Landscape</h2>
+                <p>
+                    Fuel prices are influenced by taxation, government policy,
+                    subsidies, market conditions, and economic differences.
+                    Analyzing these factors helps reveal how countries approach
+                    fuel affordability and energy policy.
+                </p>
+            </div>
+
+            <div class="overview-grid">
+
+                <article class="info-card">
+                    <div class="card-icon">⛽</div>
+                    <h3>Fuel Price Analysis</h3>
+                    <p>
+                        Compare fuel prices across countries and investigate
+                        differences in petrol, diesel, LPG, and other available
+                        fuel categories in the dataset.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="card-icon">🏛️</div>
+                    <h3>Taxation & Subsidies</h3>
+                    <p>
+                        Explore how fuel taxes and government subsidies
+                        contribute to differences in consumer fuel costs
+                        across regions.
+                    </p>
+                </article>
+
+                <article class="info-card">
+                    <div class="card-icon">📊</div>
+                    <h3>Data-Driven Insights</h3>
+                    <p>
+                        Use interactive charts and comparisons to identify
+                        patterns that can support policy analysis, planning,
+                        and further research.
+                    </p>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- TABLEAU STORY -->
+        <section class="section tableau-section" id="explore">
+
+            <div class="container">
+
+                <div class="section-heading">
+                    <p class="eyebrow">INTERACTIVE DATA EXPLORATION</p>
+                    <h2>Explore the Tableau Story</h2>
+                    <p>
+                        Navigate the Story points and visualizations to explore
+                        global fuel prices, taxation patterns, and their
+                        potential economic implications.
+                    </p>
+                </div>
+
+                <div class="tableau-container">
+
+                    <!--
+                    IMPORTANT:
+                    This URL assumes that the published Tableau Story is
+                    available under the view name STORY.
+
+                    If Tableau displays an error, replace the src with the
+                    published Story URL obtained through Tableau Public:
+                    Open Story → Share → Copy Link.
+                    -->
+
+                    <tableau-viz
+                        id="globalFuelWorkbook"
+                        src="https://public.tableau.com/views/GlobalFuelPricesandTaxationAnalysis2020-2026/STORY?:showVizHome=no"
+                        toolbar="bottom"
+                        hide-tabs
+                        device="desktop"
+                        width="100%"
+                        height="900">
+                    </tableau-viz>
+
+                </div>
+
+                <p class="tableau-note">
+                    <strong>Tip:</strong> Use the navigation within the Tableau
+                    Story to move between its story points. You can also use
+                    Tableau's toolbar to interact with the visualizations.
+                </p>
+
+                <div class="external-link">
+                    <a
+                        href="https://public.tableau.com/app/profile/disha.patidar7671/viz/GlobalFuelPricesandTaxationAnalysis2020-2026/Top10LPGCountries"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-primary">
+                        Open on Tableau Public ↗
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ANALYTICAL SCENARIOS -->
+        <section class="section container" id="scenarios">
+
+            <div class="section-heading">
+                <p class="eyebrow">KEY ANALYTICAL AREAS</p>
+                <h2>Three Perspectives on Global Fuel Data</h2>
+                <p>
+                    The project examines fuel data through three practical
+                    perspectives to connect the visual analysis with
+                    real-world decisions.
+                </p>
+            </div>
+
+            <div class="scenario-grid">
+
+                <article class="scenario-card">
+                    <span class="scenario-number">01</span>
+                    <h3>Fuel Taxation & Subsidy Policy</h3>
+                    <p>
+                        Examine variations in fuel taxation and subsidies
+                        to understand how government policies influence
+                        fuel affordability.
+                    </p>
+                    <a href="#explore">Explore the Story →</a>
+                </article>
+
+                <article class="scenario-card">
+                    <span class="scenario-number">02</span>
+                    <h3>Global Fuel Prices & Supply Chain Planning</h3>
+                    <p>
+                        Compare fuel prices across markets to identify
+                        differences that may be relevant to logistics,
+                        transportation, and supply chain planning.
+                    </p>
+                    <a href="#explore">Explore the Story →</a>
+                </article>
+
+                <article class="scenario-card">
+                    <span class="scenario-number">03</span>
+                    <h3>Fuel Prices, Taxation & Economic Development</h3>
+                    <p>
+                        Investigate relationships between fuel prices,
+                        taxation, and economic indicators to support
+                        broader comparative analysis.
+                    </p>
+                    <a href="#explore">Explore the Story →</a>
+                </article>
+
+            </div>
+        </section>
+
+
+        <!-- ABOUT -->
+        <section class="section about-section" id="about">
+
+            <div class="container about-content">
+
+                <div>
+                    <p class="eyebrow">ABOUT THIS PROJECT</p>
+                    <h2>Turning Data into Meaningful Insights</h2>
+                </div>
+
+                <div>
+                    <p>
+                        This project uses Tableau to explore global fuel
+                        prices and taxation trends over the 2020–2026
+                        study period. Its interactive visualizations are
+                        designed to make cross-country comparisons easier
+                        and communicate findings clearly.
+                    </p>
+
+                    <p>
+                        <strong>Project creator:</strong> Disha Patidar
+                    </p>
+
+                    <p>
+                        <strong>Visualization tool:</strong> Tableau Public
+                    </p>
+
+                    <p>
+                        <strong>Focus:</strong> Global fuel prices,
+                        taxation, subsidies, and comparative analysis.
+                    </p>
+
+                    <a
+                        href="https://github.com/DishaPatidar11/global-fuel-prices-taxation-analysis"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="button button-secondary">
+                        View Project on GitHub ↗
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+
+            <div>
+                <strong>Global Fuel Intelligence</strong>
+                <p>Global Fuel Prices and Taxation Trends</p>
+            </div>
+
+            <div>
+                <a href="#home">Back to Top ↑</a>
+            </div>
+
+            <p class="copyright">
+                © 2026 Disha Patidar. Created for educational and analytical
+                purposes.
+            </p>
 
         </div>
+    </footer>
 
-        <div class="viz-container">
 
-          <tableau-viz
-            id="globalFuelWorkbook"
-            src="https://public.tableau.com/views/GlobalFuelPricesandTaxationAnalysis2020-2026/Top10LPGCountries?:showVizHome=no&amp;:tabs=yes"
-            toolbar="bottom"
-            device="desktop"
-            width="100%"
-            height="900">
+    <!-- Keep the homepage at the top when opening the root URL.
+         Preserve normal navigation when a section hash is present. -->
+    <script>
+        if (!window.location.hash) {
+            if ("scrollRestoration" in history) {
+                history.scrollRestoration = "manual";
+            }
 
-          </tableau-viz>
-
-        </div>
-
-        <div class="viz-note">
-          <span>ⓘ</span>
-          <p>
-            <strong>Navigation tip:</strong>
-            If the Story and all three dashboards are not available in the
-            embedded view, open the workbook on Tableau Public. Confirm that
-            the Story and dashboards are published and that the workbook
-            exposes the required navigation tabs.
-          </p>
-        </div>
-
-      </div>
-
-      <div class="workbook-actions">
-
-        <a
-          class="button button-primary"
-          href="https://public.tableau.com/app/profile/disha.patidar7671/viz/GlobalFuelPricesandTaxationAnalysis2020-2026/Top10LPGCountries"
-          target="_blank"
-          rel="noopener noreferrer">
-          View workbook on Tableau Public ↗
-        </a>
-
-        <span>
-          Best experienced on a desktop or laptop for detailed chart interaction.
-        </span>
-
-      </div>
-
-    </section>
-
-    <!-- THREE SCENARIOS -->
-    <section class="section scenarios-section" id="scenarios">
-
-      <div class="section-heading">
-
-        <div>
-          <div class="section-kicker">03 / THREE ANALYTICAL SCENARIOS</div>
-          <h2>Three lenses.<br><span>One global picture.</span></h2>
-        </div>
-
-        <p>
-          The project is organized around three practical perspectives.
-          Each scenario provides a different way to explore the relationship
-          between fuel prices, public policy, and economic conditions.
-        </p>
-
-      </div>
-
-      <div class="scenario-grid">
-
-        <article class="scenario-card">
-          <div class="scenario-number">SCENARIO 01</div>
-          <div class="scenario-icon orange">⌂</div>
-          <h3>Taxation &amp; Subsidy Policy</h3>
-          <p>
-            Explore how taxation and subsidy approaches relate to differences
-            in fuel prices across countries.
-          </p>
-          <a href="#explore">Explore in workbook <span>↗</span></a>
-        </article>
-
-        <article class="scenario-card">
-          <div class="scenario-number">SCENARIO 02</div>
-          <div class="scenario-icon blue">⇄</div>
-          <h3>Global Prices &amp; Supply Chain</h3>
-          <p>
-            Compare fuel-price patterns to inform broader supply-chain
-            and planning discussions.
-          </p>
-          <a href="#explore">Explore in workbook <span>↗</span></a>
-        </article>
-
-        <article class="scenario-card">
-          <div class="scenario-number">SCENARIO 03</div>
-          <div class="scenario-icon green">◌</div>
-          <h3>Economic Development</h3>
-          <p>
-            Examine fuel-price and policy differences alongside country
-            and regional economic context.
-          </p>
-          <a href="#explore">Explore in workbook <span>↗</span></a>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- INSIGHT SECTION -->
-    <section class="insight-band">
-
-      <div class="insight-mark">“</div>
-
-      <div>
-        <div class="section-kicker">WHY IT MATTERS</div>
-        <h2>Turn complex data into<br>clearer questions and insights.</h2>
-        <p>
-          Interactive visual analytics helps users move beyond isolated
-          numbers, compare patterns, and ask better questions about
-          global fuel markets.
-        </p>
-      </div>
-
-      <a class="button button-light" href="#explore">
-        Start exploring <span>→</span>
-      </a>
-
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section about-section" id="about">
-
-      <div class="about-copy">
-
-        <div class="section-kicker">04 / ABOUT THIS PROJECT</div>
-
-        <h2>Built to explore data<br>through visualization.</h2>
-
-        <p>
-          This project presents global fuel-price and taxation information
-          through a Tableau Story and dashboards. The website provides a
-          single place to explore the published analysis and understand
-          its key themes.
-        </p>
-
-        <div class="about-tags">
-          <span>Tableau Public</span>
-          <span>Data Visualization</span>
-          <span>Global Fuel Analysis</span>
-        </div>
-
-      </div>
-
-      <div class="about-panel">
-
-        <div class="about-panel-top">
-          <span class="about-avatar">DP</span>
-          <div>
-            <small>PROJECT BY</small>
-            <h3>Disha Patidar</h3>
-            <p>Global Fuel Analytics</p>
-          </div>
-        </div>
-
-        <div class="about-divider"></div>
-
-        <div class="about-detail">
-          <span>Project focus</span>
-          <strong>Fuel prices, taxation &amp; subsidies</strong>
-        </div>
-
-        <div class="about-detail">
-          <span>Analysis period</span>
-          <strong>2020–2026</strong>
-        </div>
-
-        <div class="about-detail">
-          <span>Visualization platform</span>
-          <strong>Tableau Public</strong>
-        </div>
-
-        <a
-          class="about-link"
-          href="https://public.tableau.com/app/profile/disha.patidar7671/viz/GlobalFuelPricesandTaxationAnalysis2020-2026/Top10LPGCountries"
-          target="_blank"
-          rel="noopener noreferrer">
-          Visit Disha's Tableau workbook <span>↗</span>
-        </a>
-
-      </div>
-
-    </section>
-
-  </main>
-
-  <!-- FOOTER -->
-  <footer class="site-footer">
-
-    <a class="brand footer-brand" href="#home">
-      <span class="brand-mark">GF</span>
-      <span>Global Fuel <b>Analytics</b></span>
-    </a>
-
-    <p>
-      Global Fuel Prices and Taxation Trends:
-      A Comprehensive Global Performance Intelligence Report
-    </p>
-
-    <div class="footer-bottom">
-      <span>© 2026 Disha Patidar · Data visualization project</span>
-      <a href="#home">Back to top ↑</a>
-    </div>
-
-  </footer>
+            window.addEventListener("load", function () {
+                window.scrollTo(0, 0);
+            });
+        }
+    </script>
 
 </body>
 </html>
